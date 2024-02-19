@@ -11,8 +11,8 @@ int main()
 
     // Create a pointer ptr to int
     int *ptr = &num;
-    cout << "Address of ptr is --> " << ptr << endl;
-    cout << "Value of ptr is --> " << *ptr << endl;
+    cout << "Address of num is --> " << ptr << endl;
+    cout << "Value of num is --> " << *ptr << endl;
     cout << endl;
 
     // Create a pointer ptr to double
