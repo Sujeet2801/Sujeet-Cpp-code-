@@ -1,5 +1,21 @@
 #include<iostream>
+#include<unordered_set>
 using namespace std;
+
+void pairSumOptimized(int arr[], int size, int target) {
+    unordered_set<int> seen;
+
+    for(int i = 0; i < size; i++) {
+        
+        int complement = target - arr[i];
+        if(seen.count(complement)) {
+            arr[i] < complement ?
+                cout << arr[i] << " " << complement << endl :
+                cout << complement << " " << arr[i] << endl;
+        }
+        seen.insert(arr[i]);
+    }
+}
 
 void pairSum(int arr[], int n, int sum)
 {
