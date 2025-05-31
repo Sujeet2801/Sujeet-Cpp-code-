@@ -1,6 +1,17 @@
 #include<iostream>
 using namespace std;
 
+void sortZeroOne(int arr[], int size) {
+    
+    int zeroIndex = 0;
+    for(int i = 0; i < size; i++) {
+        if(arr[i] == 0) {
+            swap(arr[i], arr[zeroIndex]);
+            zeroIndex++;
+        }
+    }
+}1
+
 void sortOne(int arr[], int n) {
 
     int left = 0, right = n-1;
