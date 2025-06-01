@@ -1,4 +1,7 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
 using namespace std;
 
 bool uniqueOccurrences(vector<int>& arr) {
@@ -38,7 +41,27 @@ bool uniqueOccurrences(vector<int>& arr) {
         }
     }
     return true;
-  }
+}
+
+bool uniqueOccurrenceOptimized(ivector<int>& arr) {
+    
+    unordered_map<int, int> freq;
+
+    for (int i = 0; i < arr.size(); i++) {
+        freq[arr[i]]++;
+    }
+
+    unordered_set<int> seenFrequencies;
+
+    for (auto it : freq) {
+        if (seenFrequencies.count(it.second)) {
+            return false;
+        }
+        seenFrequencies.insert(it.second);
+    }
+
+    return true;
+}
 
 int main()
 {
